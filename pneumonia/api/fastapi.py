@@ -43,4 +43,4 @@ async def predict(img: UploadFile=File(...)):
     verdict = pre_trained.predict(tupled)
 
 
-    return {"Results": round(verdict[0][0]*100,2)}
+    return {"Results": f"Patient has a {str(round(verdict[0][0]*100,2))}% chance of having pneumonia."}
